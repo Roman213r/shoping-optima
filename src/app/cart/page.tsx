@@ -25,11 +25,19 @@ export default function CartPage() {
         <ul>
           {lines.map(({ product, quantity }) => (
             <li key={product.id} className="flex items-center justify-between gap-4 border-b px-4 py-4 last:border-0">
-              <div>
-                <Link href={`/product/${product.id}`} className="font-semibold hover:text-green-700">
-                  {product.title}
-                </Link>
-                <p className="text-sm text-zinc-500">{formatPrice(product.price)}</p>
+              <div className="flex min-w-0 items-center gap-3">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={product.image}
+                  alt=""
+                  className="h-16 w-16 shrink-0 rounded-lg object-cover"
+                />
+                <div className="min-w-0">
+                  <Link href={`/product/${product.id}`} className="font-semibold hover:text-green-700">
+                    {product.title}
+                  </Link>
+                  <p className="text-sm text-zinc-500">{formatPrice(product.price)}</p>
+                </div>
               </div>
               <div className="flex items-center gap-2">
                 <button

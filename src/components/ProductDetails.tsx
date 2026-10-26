@@ -28,7 +28,7 @@ export function ProductDetails() {
         ← До каталогу
       </Link>
       <div className="mt-4 grid gap-8 md:grid-cols-2">
-        <ProductArt product={product} />
+        <ProductArt product={product} className="h-72 md:h-full min-h-72" />
         <div>
           <p className="text-sm text-zinc-500">{categoryLabel(product.category)}</p>
           <h1 className="mt-1 text-3xl font-black">{product.title}</h1>

@@ -15,19 +15,19 @@ type User = { name: string; email: string };
 type CartLine = { product: Product; quantity: number };
 
 type StoreContextValue = {
+  ready: boolean;
   user: User | null;
   cartCount: number;
   lines: CartLine[];
   total: number;
   addToCart: (productId: string) => void;
   changeQty: (productId: string, quantity: number) => void;
-  login: (email: string, password: string, name?: string) => string | null;
-  logout: () => void;
+  login: (email: string, password: string, name?: string) => Promise<string | null>;
+  logout: () => Promise<void>;
 };
 
 const StoreContext = createContext<StoreContextValue | null>(null);
 
-const USER_KEY = "optima-user";
 const CART_KEY = "optima-cart";
 
 export function StoreProvider({ children }: { children: ReactNode }) {
@@ -37,14 +37,17 @@ export function StoreProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     try {
-      const savedUser = localStorage.getItem(USER_KEY);
       const savedCart = localStorage.getItem(CART_KEY);
-      if (savedUser) setUser(JSON.parse(savedUser) as User);
       if (savedCart) setCart(JSON.parse(savedCart) as Record<string, number>);
     } catch {
       /* ignore broken storage */
     }
-    setReady(true);
+
+    fetch("/api/auth/me")
+      .then((res) => res.json())
+      .then((data: { user?: User | null }) => setUser(data.user ?? null))
+      .catch(() => setUser(null))
+      .finally(() => setReady(true));
   }, []);
 
   useEffect(() => {
@@ -61,6 +64,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
       .filter((line): line is CartLine => line !== null);
 
     return {
+      ready,
       user,
       cartCount: lines.reduce((sum, line) => sum + line.quantity, 0),
       lines,
@@ -79,23 +83,24 @@ export function StoreProvider({ children }: { children: ReactNode }) {
           return next;
         });
       },
-      login: (email, password, name) => {
-        if (!email.includes("@")) return "Вкажіть коректний email.";
-        if (password.length < 4) return "Пароль має бути від 4 символів.";
-        const nextUser = {
-          email,
-          name: name?.trim() || email.split("@")[0],
-        };
-        setUser(nextUser);
-        localStorage.setItem(USER_KEY, JSON.stringify(nextUser));
+      login: async (email, password, name) => {
+        const isRegister = Boolean(name?.trim());
+        const response = await fetch(isRegister ? "/api/auth/register" : "/api/auth/login", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password, name }),
+        });
+        const data = (await response.json()) as { error?: string; user?: User };
+        if (!response.ok) return data.error ?? "Не вдалося увійти.";
+        setUser(data.user ?? { email, name: name?.trim() || email.split("@")[0] });
         return null;
       },
-      logout: () => {
+      logout: async () => {
+        await fetch("/api/auth/logout", { method: "POST" });
         setUser(null);
-        localStorage.removeItem(USER_KEY);
       },
     };
-  }, [cart, user]);
+  }, [cart, ready, user]);
 
   return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;
 }

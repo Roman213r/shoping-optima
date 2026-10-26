@@ -6,7 +6,7 @@ import { FormEvent, useState } from "react";
 import { useStore } from "@/components/StoreProvider";
 
 export function Header() {
-  const { user, cartCount, logout } = useStore();
+  const { ready, user, cartCount, logout } = useStore();
   const router = useRouter();
   const [query, setQuery] = useState("");
 
@@ -39,8 +39,14 @@ export function Header() {
         </form>
 
         <nav className="ml-auto flex items-center gap-3 text-sm font-medium">
-          {user ? (
-            <button type="button" onClick={logout} className="rounded-md px-2 py-1 hover:bg-white/10">
+          {ready && user ? (
+            <button
+              type="button"
+              onClick={() => {
+                void logout();
+              }}
+              className="rounded-md px-2 py-1 hover:bg-white/10"
+            >
               {user.name} · вийти
             </button>
           ) : (
@@ -50,7 +56,7 @@ export function Header() {
           )}
           <Link href="/cart" className="relative rounded-md bg-white/15 px-3 py-2 hover:bg-white/25">
             Кошик
-            {cartCount > 0 && (
+            {ready && cartCount > 0 && (
               <span className="absolute -right-1 -top-1 grid h-5 min-w-5 place-items-center rounded-full bg-orange-400 px-1 text-[11px] font-bold text-white">
                 {cartCount}
               </span>

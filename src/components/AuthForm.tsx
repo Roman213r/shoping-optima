@@ -15,9 +15,10 @@ export function AuthForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
 
-  function onSubmit(event: FormEvent) {
+  async function onSubmit(event: FormEvent) {
     event.preventDefault();
-    const message = login(email, password, mode === "register" ? name : undefined);
+    setError(null);
+    const message = await login(email, password, mode === "register" ? name : undefined);
     if (message) {
       setError(message);
       return;
@@ -109,7 +110,7 @@ export function AuthForm() {
         </button>
       </form>
       <p className="mt-4 text-xs text-zinc-500">
-        Макет без сервера: дані зберігаються лише в браузері (localStorage).
+        Облікові записи зберігаються локально в SQLite (data/auth.db). Пароль хешується, токен сесії — у httpOnly cookie.
       </p>
     </div>
   );
