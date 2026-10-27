@@ -17,7 +17,7 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-20 shadow-md">
+    <header className="sticky top-0 z-20 shadow-md" data-store-ready={ready ? "true" : "false"}>
       <div className="bg-[#00a046] text-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3">
         <Link href="/" className="text-xl font-black tracking-tight">

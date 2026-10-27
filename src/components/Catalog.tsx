@@ -3,39 +3,18 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { ProductCard } from "@/components/ProductCard";
-import { categories, PAGE_SIZE, products, type CategoryId } from "@/data/products";
-
-function catalogHref(opts: { q?: string; cat?: string; page?: number }) {
-  const params = new URLSearchParams();
-  if (opts.q) params.set("q", opts.q);
-  if (opts.cat) params.set("cat", opts.cat);
-  if (opts.page && opts.page > 1) params.set("page", String(opts.page));
-  const query = params.toString();
-  return query ? `/?${query}` : "/";
-}
+import { catalogHref, filterProducts, paginate, parseCatalogQuery } from "@/lib/catalog";
+import { categories, products } from "@/data/products";
 
 export function Catalog() {
   const searchParams = useSearchParams();
-  const q = searchParams.get("q") ?? "";
-  const cat = searchParams.get("cat") ?? "";
-  const page = Math.max(1, Number(searchParams.get("page") ?? "1") || 1);
-  const query = q.trim().toLowerCase();
-  const activeCat = categories.some((item) => item.id === cat)
-    ? (cat as CategoryId)
-    : undefined;
-
-  const filtered = products.filter((product) => {
-    const byCat = !activeCat || product.category === activeCat;
-    const byQuery =
-      !query ||
-      product.title.toLowerCase().includes(query) ||
-      product.short.toLowerCase().includes(query);
-    return byCat && byQuery;
+  const { q, query, activeCat, page } = parseCatalogQuery({
+    q: searchParams.get("q"),
+    cat: searchParams.get("cat"),
+    page: searchParams.get("page"),
   });
-
-  const pageCount = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
-  const currentPage = Math.min(page, pageCount);
-  const pageItems = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+  const filtered = filterProducts(products, { query, category: activeCat });
+  const { pageCount, currentPage, pageItems } = paginate(filtered, page);
 
   return (
     <div className="grid gap-6 lg:grid-cols-[220px_1fr]">

@@ -4,14 +4,11 @@ import Link from "next/link";
 import { ProductArt } from "@/components/ProductArt";
 import { useStore } from "@/components/StoreProvider";
 import type { Product } from "@/data/products";
-import { formatPrice } from "@/lib/format";
+import { discountPercent, formatPrice } from "@/lib/format";
 
 export function ProductCard({ product }: { product: Product }) {
   const { addToCart } = useStore();
-  const discount =
-    product.oldPrice && product.oldPrice > product.price
-      ? Math.round((1 - product.price / product.oldPrice) * 100)
-      : 0;
+  const discount = discountPercent(product.price, product.oldPrice);
 
   return (
     <article className="flex flex-col rounded-xl border border-zinc-200 bg-white p-3 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">

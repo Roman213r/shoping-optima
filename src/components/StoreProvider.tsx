@@ -42,12 +42,15 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     } catch {
       /* ignore broken storage */
     }
+    setReady(true);
 
-    fetch("/api/auth/me")
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 4000);
+    fetch("/api/auth/me", { signal: controller.signal })
       .then((res) => res.json())
       .then((data: { user?: User | null }) => setUser(data.user ?? null))
       .catch(() => setUser(null))
-      .finally(() => setReady(true));
+      .finally(() => window.clearTimeout(timer));
   }, []);
 
   useEffect(() => {
