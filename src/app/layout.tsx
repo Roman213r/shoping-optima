@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { StoreProvider } from "@/components/StoreProvider";
 import "./globals.css";
@@ -25,13 +26,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="uk"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-zinc-100 text-zinc-900">
+      <body className="flex min-h-full flex-col bg-[#d6d6d6] text-zinc-900">
         <StoreProvider>
           <Header />
           <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-6">{children}</main>
-          <footer className="border-t bg-white py-6 text-center text-sm text-zinc-500">
-            Optima Smart · макет магазину розумного дому
-          </footer>
+          <Footer />
         </StoreProvider>
       </body>
     </html>

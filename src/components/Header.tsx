@@ -17,7 +17,8 @@ export function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-20 bg-[#00a046] text-white shadow-md">
+    <header className="sticky top-0 z-20 shadow-md">
+      <div className="bg-[#00a046] text-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-3 px-4 py-3">
         <Link href="/" className="text-xl font-black tracking-tight">
           Optima<span className="text-lime-200">Smart</span>
@@ -64,6 +65,29 @@ export function Header() {
           </Link>
         </nav>
       </div>
+      </div>
+      <nav className="border-b border-zinc-300 bg-[#3a3a3a] text-sm text-zinc-100">
+        <div className="mx-auto flex max-w-6xl flex-wrap gap-x-5 gap-y-2 px-4 py-2">
+          <Link href="/" className="hover:text-lime-300">
+            Каталог
+          </Link>
+          <Link href="/sales" className="hover:text-lime-300">
+            Акції
+          </Link>
+          <Link href="/news" className="font-semibold text-lime-300 hover:text-white">
+            Новини
+          </Link>
+          <Link href="/delivery" className="hover:text-lime-300">
+            Доставка
+          </Link>
+          <Link href="/warranty" className="hover:text-lime-300">
+            Гарантія
+          </Link>
+          <Link href="/contacts" className="hover:text-lime-300">
+            Контакти
+          </Link>
+        </div>
+      </nav>
     </header>
   );
 }

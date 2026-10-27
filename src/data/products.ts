@@ -72,7 +72,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#0ea5e9",
     image:
-      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1584907797015-7554e84d2b13?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "bulb-orbit",
@@ -99,7 +99,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#22c55e",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "thermostat-niva",
@@ -154,7 +154,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#a855f7",
     image:
-      "https://images.unsplash.com/photo-1565814329452-e1efa11c5b89?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "speaker-echo",
@@ -167,7 +167,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#0369a1",
     image:
-      "https://images.unsplash.com/photo-1545454675-3538adf18110?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1543512214-318c7703ecd5?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "sensor-motion",
@@ -180,7 +180,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#94a3b8",
     image:
-      "https://images.unsplash.com/photo-1558002038-df56cded2518?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "mop-duo",
@@ -208,7 +208,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#fbbf24",
     image:
-      "https://images.unsplash.com/photo-1507473881161-ead91b4b0c0d?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "curtain-motor",
@@ -235,7 +235,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#38bdf8",
     image:
-      "https://images.unsplash.com/photo-1585771724684-38269d6639fd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1565538810643-b5b1c3946aa5?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "humidifier-mist",
@@ -248,7 +248,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#67e8f9",
     image:
-      "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "doorbell-view",
@@ -262,7 +262,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#0f172a",
     image:
-      "https://images.unsplash.com/photo-1558002038-1092192428b0?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "cam-outdoor",
@@ -275,7 +275,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#1e293b",
     image:
-      "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "switch-wall",
@@ -287,7 +287,8 @@ const catalog: Product[] = [
     category: "power",
     inStock: true,
     accent: "#16a34a",
-    image: "https://picsum.photos/seed/switch-wall-touch/800/600",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "strip-power",
@@ -301,7 +302,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#15803d",
     image:
-      "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "ir-blaster",
@@ -314,7 +315,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#0284c7",
     image:
-      "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "leak-sensor",
@@ -326,7 +327,8 @@ const catalog: Product[] = [
     category: "security",
     inStock: true,
     accent: "#0369a1",
-    image: "https://picsum.photos/seed/aqua-leak-sensor/800/600",
+    image:
+      "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "window-bot",
@@ -340,7 +342,7 @@ const catalog: Product[] = [
     inStock: true,
     accent: "#0ea5e9",
     image:
-      "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=800&q=80",
   },
   {
     id: "night-panel",
@@ -352,14 +354,173 @@ const catalog: Product[] = [
     category: "lighting",
     inStock: true,
     accent: "#d97706",
-    image: "https://picsum.photos/seed/wood-night-panel/800/600",
+    image:
+      "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "dimmer-slide",
+    title: "Дімер Slide 200W",
+    short: "Плавне світло зі смартфона, сумісний із лампами Orbit.",
+    price: 649,
+    rating: 4.3,
+    reviews: 88,
+    category: "power",
+    inStock: true,
+    accent: "#22c55e",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "usb-charger-gan",
+    title: "Зарядка GaN 65W",
+    short: "Швидка зарядка телефону і хаба, два USB-C.",
+    price: 899,
+    oldPrice: 1099,
+    rating: 4.5,
+    reviews: 210,
+    category: "power",
+    inStock: true,
+    accent: "#15803d",
+    image:
+      "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "socket-double",
+    title: "Подвійна розетка Twin Pro",
+    short: "Дві лінії в одному корпусі, облік споживання.",
+    price: 799,
+    rating: 4.2,
+    reviews: 134,
+    category: "power",
+    inStock: true,
+    accent: "#16a34a",
+    image:
+      "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "surge-guard",
+    title: "Реле напруги Guard 40A",
+    short: "Вимикає світло при стрибку, захищає холодильник і хаб.",
+    price: 1299,
+    oldPrice: 1499,
+    rating: 4.6,
+    reviews: 76,
+    category: "power",
+    inStock: true,
+    accent: "#166534",
+    image:
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "battery-backup",
+    title: "ДБЖ Mini Power 600",
+    short: "Година роботи роутера і камер під час блекауту.",
+    price: 2599,
+    rating: 4.4,
+    reviews: 59,
+    category: "power",
+    inStock: true,
+    accent: "#14532d",
+    image:
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "cable-pack",
+    title: "Набір кабелів Power Kit",
+    short: "USB-C, Lightning і подовжувач 3 м для розумного дому.",
+    price: 349,
+    rating: 4.1,
+    reviews: 301,
+    category: "power",
+    inStock: true,
+    accent: "#4ade80",
+    image:
+      "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "bulb-gu10",
+    title: "Споти GU10 Smart 3 шт",
+    short: "Комплект точкових ламп для кухні, сценарій «вечеря».",
+    price: 999,
+    oldPrice: 1299,
+    rating: 4.4,
+    reviews: 167,
+    category: "lighting",
+    inStock: true,
+    accent: "#fbbf24",
+    image:
+      "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "vacuum-mini",
+    title: "Пилосос Lynx Mini",
+    short: "Компактний робот для студії, зарядка 2 години.",
+    price: 6999,
+    oldPrice: 7999,
+    rating: 4.3,
+    reviews: 92,
+    category: "cleaning",
+    inStock: true,
+    accent: "#64748b",
+    image:
+      "https://images.unsplash.com/photo-1558317374-067fb5f30001?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "remote-pro",
+    title: "Пульт Pulse Remote Pro",
+    short: "Фізичні кнопки сцен, підсвітка, робота з хабом Mini.",
+    price: 899,
+    rating: 4.5,
+    reviews: 118,
+    category: "control",
+    inStock: true,
+    accent: "#0284c7",
+    image:
+      "https://images.unsplash.com/photo-1584907797015-7554e84d2b13?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "heater-oil",
+    title: "Обігрівач Heat Oil Smart",
+    short: "Масляний радіатор із графіком і додатком.",
+    price: 3199,
+    oldPrice: 3699,
+    rating: 4.2,
+    reviews: 71,
+    category: "climate",
+    inStock: true,
+    accent: "#ef4444",
+    image:
+      "https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "siren-home",
+    title: "Сирена Home Alert",
+    short: "105 дБ, зв’язок із датчиками руху та протікання.",
+    price: 649,
+    rating: 4.4,
+    reviews: 83,
+    category: "security",
+    inStock: true,
+    accent: "#334155",
+    image:
+      "https://images.unsplash.com/photo-1557597774-9d3bdab611c3?auto=format&fit=crop&w=800&q=80",
+  },
+  {
+    id: "plug-outdoor",
+    title: "Вулична розетка Rain IP44",
+    short: "Для гірлянди та насоса, волога захист, таймер.",
+    price: 699,
+    rating: 4.3,
+    reviews: 54,
+    category: "power",
+    inStock: true,
+    accent: "#22c55e",
+    image:
+      "https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=800&q=80",
   },
 ];
 
-export const products: Product[] = catalog.map((item) => ({
-  ...item,
-  image: `https://picsum.photos/seed/${item.id}/800/600`,
-}));
+export const products: Product[] = catalog;
 
 export function getProduct(id: string) {
   return products.find((item) => item.id === id);

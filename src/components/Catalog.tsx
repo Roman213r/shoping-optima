@@ -47,17 +47,20 @@ export function Catalog() {
           href="/"
           className={`block rounded-md px-2 py-2 text-sm ${!activeCat ? "bg-green-50 font-semibold text-green-800" : "text-zinc-700 hover:bg-zinc-50"}`}
         >
-          Усі товари
+          Усі товари ({products.length})
         </Link>
-        {categories.map((item) => (
-          <Link
-            key={item.id}
-            href={catalogHref({ cat: item.id })}
-            className={`block rounded-md px-2 py-2 text-sm ${activeCat === item.id ? "bg-green-50 font-semibold text-green-800" : "text-zinc-700 hover:bg-zinc-50"}`}
-          >
-            {item.label}
-          </Link>
-        ))}
+        {categories.map((item) => {
+          const count = products.filter((product) => product.category === item.id).length;
+          return (
+            <Link
+              key={item.id}
+              href={catalogHref({ cat: item.id })}
+              className={`block rounded-md px-2 py-2 text-sm ${activeCat === item.id ? "bg-green-50 font-semibold text-green-800" : "text-zinc-700 hover:bg-zinc-50"}`}
+            >
+              {item.label} ({count})
+            </Link>
+          );
+        })}
       </aside>
 
       <section>
@@ -66,6 +69,15 @@ export function Catalog() {
           <h1 className="text-2xl font-black">Розумний дім: люстри, пилососи, пульти</h1>
         </div>
 
+        {activeCat && (
+          <p className="mb-3 rounded-lg bg-white px-3 py-2 text-sm text-zinc-600">
+            Фільтр: {categories.find((item) => item.id === activeCat)?.label}. Показано {filtered.length} з{" "}
+            {products.length}.{" "}
+            <Link href="/" className="font-semibold text-green-700 hover:underline">
+              Відкрити всі сторінки каталогу
+            </Link>
+          </p>
+        )}
         <p className="mb-3 text-sm text-zinc-500">
           {query ? `Пошук: «${q}» · ` : null}
           {filtered.length} товарів · сторінка {currentPage} з {pageCount}
