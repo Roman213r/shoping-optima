@@ -4,6 +4,8 @@
 
 **Стек:** Next.js 16 · React 19 · TypeScript · Tailwind CSS 4
 
+Потрібен **Node.js 24** (як у GitHub Actions).
+
 ## Запуск
 
 ```bash
